@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "Promptle",
+  "short_name": "Promptle",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Promptle - Can you guess the AI prompt?"
+}
