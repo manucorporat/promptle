@@ -8,13 +8,13 @@ import {
   mainImg,
   playGameButton,
 } from "./index.css";
-import { promptOfTheDay } from "./layout";
+import { usePromptOfTheDay } from "./layout";
 import Rules from "~/rules.md";
 import Intro from "~/intro.md";
 import image from "../../public/header.jpg";
 
 export default component$(() => {
-  const prompt = promptOfTheDay.use();
+  const prompt = usePromptOfTheDay();
   return (
     <main class={mainBox}>
       <div class={mainHeaderBox}>

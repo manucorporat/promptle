@@ -35,7 +35,7 @@ import {
 import Rules from "~/rules.md";
 import { animate, spring } from "motion";
 
-export const getCurrentGame = loader$(({ params, redirect }) => {
+export const useCurrentGame = loader$(({ params, redirect }) => {
   const id = params["id"];
   const promp = getPromptData(id);
   if (!promp) {
@@ -50,7 +50,7 @@ export const getCurrentGame = loader$(({ params, redirect }) => {
   };
 });
 
-export const gameAction = action$(
+export const useGameAction = action$(
   ({ step, lives, guesses, tries }, { params, redirect }) => {
     const id = params["id"];
     const promp = getPromptData(id as string);
@@ -91,8 +91,8 @@ export const gameAction = action$(
 );
 
 export default component$(() => {
-  const game = getCurrentGame.use();
-  const action = gameAction.use();
+  const game = useCurrentGame();
+  const action = useGameAction();
 
   const currentClue = action.value?.clue ?? game.value.clue;
   const lives = action.value?.lives ?? 5;

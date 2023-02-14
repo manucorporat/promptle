@@ -2,7 +2,7 @@ import { component$, Slot } from "@builder.io/qwik";
 import { DocumentHead, loader$ } from "@builder.io/qwik-city";
 import { getDay, getPromptOfTheDay } from "~/logic";
 
-export const promptOfTheDay = loader$(() => {
+export const usePromptOfTheDay = loader$(() => {
   const a = getPromptOfTheDay();
   return {
     id: a.prompt_id,
@@ -11,7 +11,7 @@ export const promptOfTheDay = loader$(() => {
 });
 
 export default component$(() => {
-  const a = promptOfTheDay.use();
+  const a = usePromptOfTheDay();
 
   return (
     <>
