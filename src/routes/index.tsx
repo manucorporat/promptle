@@ -11,20 +11,14 @@ import {
 import { usePromptOfTheDay } from "./layout";
 import Rules from "~/rules.md";
 import Intro from "~/intro.md";
-import image from "../../public/header.jpg";
+import HeaderImage from "~/media/header.jpg?jsx";
 
 export default component$(() => {
   const prompt = usePromptOfTheDay();
   return (
     <main class={mainBox}>
       <div class={mainHeaderBox}>
-        <img
-          alt="Promptle Logo Image"
-          width={650}
-          height={579}
-          class={mainImg}
-          src={image}
-        />
+        <HeaderImage alt="Promptle Logo Image" class={mainImg} />
         <div class={mainHeaderText}>
           <h1>Promptle</h1>
           <p class={decriptionP}>

@@ -2,10 +2,16 @@ import {
   $,
   component$,
   QwikKeyboardEvent,
-  useClientEffect$,
   useSignal,
+  useVisibleTask$,
 } from "@builder.io/qwik";
-import { action$, Form, loader$, z, zod$ } from "@builder.io/qwik-city";
+import {
+  routeAction$,
+  Form,
+  routeLoader$,
+  z,
+  zod$,
+} from "@builder.io/qwik-city";
 import { Tweet } from "~/components/tweet/tweet";
 import {
   computeFailed,
@@ -35,7 +41,7 @@ import {
 import Rules from "~/rules.md";
 import { animate, spring } from "motion";
 
-export const useCurrentGame = loader$(({ params, redirect }) => {
+export const useCurrentGame = routeLoader$(({ params, redirect }) => {
   const id = params["id"];
   const promp = getPromptData(id);
   if (!promp) {
@@ -50,7 +56,7 @@ export const useCurrentGame = loader$(({ params, redirect }) => {
   };
 });
 
-export const useGameAction = action$(
+export const useGameAction = routeAction$(
   ({ step, lives, guesses, tries }, { params, redirect }) => {
     const id = params["id"];
     const promp = getPromptData(id as string);
@@ -102,7 +108,7 @@ export default component$(() => {
   let first = true;
 
   // Ensure the first input is focused
-  useClientEffect$(({ track }) => {
+  useVisibleTask$(({ track }) => {
     track(() => [game.value]);
     const firstText = clueLineRef.value?.querySelector(
       "input[type=text]"

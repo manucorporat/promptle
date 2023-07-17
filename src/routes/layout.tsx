@@ -1,8 +1,8 @@
 import { component$, Slot } from "@builder.io/qwik";
-import { DocumentHead, loader$ } from "@builder.io/qwik-city";
+import { DocumentHead, routeLoader$ } from "@builder.io/qwik-city";
 import { getDay, getPromptOfTheDay } from "~/logic";
 
-export const usePromptOfTheDay = loader$(() => {
+export const usePromptOfTheDay = routeLoader$(() => {
   const a = getPromptOfTheDay();
   return {
     id: a.prompt_id,

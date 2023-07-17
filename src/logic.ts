@@ -84,7 +84,7 @@ export const getPromptData = (id: string) => {
 export const getDay = () => {
   const a = 24 * 60 * 60 * 1000;
   const index = Math.floor(Date.now() / a) - 19379;
-  return index;
+  return index % data.prompts.length;
 };
 
 export const getPromptOfTheDay = () => {
