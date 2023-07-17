@@ -34,7 +34,7 @@
     "eslint-plugin-qwik": "^1.2.6",
     "netlify-cli": "^15.9.0",
     "node-fetch": "3.3.0",
-    "prettier": "3.0.0",
+    "prettier": "^2.0.0",
     "styled-vanilla-extract": "^0.5.4",
     "typescript": "5.1.6",
     "undici": "5.22.1",
