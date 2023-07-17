@@ -2,12 +2,12 @@ import { component$ } from "@builder.io/qwik";
 import { DocumentHead, useLocation } from "@builder.io/qwik-city";
 import { getImageURL, getTwitterImageURL } from "~/logic";
 import { mainBox, playGameButton } from "~/routes/index.css";
-import { promptOfTheDay } from "~/routes/layout";
+import { usePromptOfTheDay } from "~/routes/layout";
 import { descriptionP, prompImage } from "./index.css";
 
 export default component$(() => {
   const loc = useLocation();
-  const prompt = promptOfTheDay.use();
+  const prompt = usePromptOfTheDay();
 
   return (
     <main class={mainBox}>

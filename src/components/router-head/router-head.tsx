@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { useDocumentHead } from "@builder.io/qwik-city";
-import favicon from "/favicon.png";
+import favicon from "../../../public/favicon.png";
 
 /**
  * The RouterHead component is placed inside of the document `<head>` element.

@@ -1,4 +1,4 @@
-import { netifyEdgeAdaptor } from "@builder.io/qwik-city/adaptors/netlify-edge/vite";
+import { netlifyEdgeAdapter } from "@builder.io/qwik-city/adapters/netlify-edge/vite";
 import { extendConfig } from "@builder.io/qwik-city/vite";
 import baseConfig from "../../vite.config";
 
@@ -12,8 +12,8 @@ export default extendConfig(baseConfig, () => {
       outDir: ".netlify/edge-functions/entry.netlify-edge",
     },
     plugins: [
-      netifyEdgeAdaptor({
-        staticGenerate: true,
+      netlifyEdgeAdapter({
+        ssg: null
       }),
     ],
   };

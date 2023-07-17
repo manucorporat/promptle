@@ -1,4 +1,3 @@
-import { style } from "motion";
 import { style as styled } from "styled-vanilla-extract/qwik";
 
 export const gameBox = styled`
